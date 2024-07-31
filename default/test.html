@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صفحه پیغام</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background: rgba(0,0,0,0.5); /* پس‌زمینه نیمه شفاف برای تمام صفحه */
+    }
+    .overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 80%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+    .message {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px; /* افزودن فاصله بین دکمه و متن */
+    }
+
+    @media (max-width: 768px) {
+        .overlay {
+            max-width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="overlay" id="messageBox">
+    <div class="message">پیام شما در اینجا قرار دارد.</div>
+    <button id="confirmButton">تایید</button>
+</div>
+
+<script>
+    var messageBox = document.getElementById('messageBox');
+    var confirmButton = document.getElementById('confirmButton');
+
+    confirmButton.addEventListener('click', function() {
+        messageBox.style.display = 'none';
+    });
+</script>
+</body>
+</html>
